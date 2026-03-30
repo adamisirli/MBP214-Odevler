@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 36px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+}
+
+.logo {
+  color: #e50914;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 15px;
+}
+
+#icerik {
+  padding: 20px 30px 40px;
+}
+
+.kategori {
+  margin-bottom: 34px;
+}
+
+.kategori h2 {
+  font-size: 24px;
+  margin: 0 0 14px;
+}
+
+.film-satiri {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.kart {
+  position: relative;
+  height: 190px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kart:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+}
+
+.kart::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.15));
+}
+
+.kart-icerik {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+}
+
+.kart-icerik h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.etiket {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #e50914;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .film-satiri {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+}
